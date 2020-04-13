@@ -11,8 +11,6 @@ public class UserDao extends BaseJsonDao<User> {
     private static final String tableName = "user-json.text";
     private static final String dbName = "user";
 
-    private volatile List<User> datas = null;
-
     {
         createTable(tableName, dbName);
     }

@@ -14,7 +14,7 @@ import java.util.logging.Level;
 public class BaseJsonDao<T> extends BaseFileDao {
     private static final String LINE_SEPARATOR = System.getProperty("line.separator");
     private static final ObjectMapper mapper = new ObjectMapper();
-    private List<T> datas = null;
+    protected volatile List<T> datas = null;
     private Class classType;
 
     {
@@ -31,12 +31,9 @@ public class BaseJsonDao<T> extends BaseFileDao {
     }
 
     protected List<T> readObject() {
-
-
         File file = getFile();
         datas = new ArrayList<>();
         try (FileReader fr = new FileReader(file); BufferedReader br = new BufferedReader(fr)) {
-            br.readLine();
             String lineString = null;
             while ((lineString = br.readLine()) != null) {
                 Object o = mapper.readValue(lineString, classType);

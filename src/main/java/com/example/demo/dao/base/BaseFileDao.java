@@ -1,7 +1,5 @@
 package com.example.demo.dao.base;
 
-import com.example.demo.common.error.BusinessException;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -15,7 +13,7 @@ public class BaseFileDao {
 
     protected File getFile() {
         if (file == null || !file.exists()) {
-            throw new BusinessException("表文件未创建");
+            logger.log(Level.WARNING, "表文件未创建");
         }
         return file;
     }
