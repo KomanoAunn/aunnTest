@@ -31,6 +31,7 @@ public class UUIDUtils {
      */
     public static String get62RadixId() {
         Long uuid = UUID.randomUUID().getLeastSignificantBits();
+        uuid = Math.abs(uuid);
         return to62RadixString(uuid);
     }
 }

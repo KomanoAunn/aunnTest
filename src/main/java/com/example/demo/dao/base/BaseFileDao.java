@@ -1,4 +1,4 @@
-package com.example.demo.dao;
+package com.example.demo.dao.base;
 
 import com.example.demo.common.error.BusinessException;
 
