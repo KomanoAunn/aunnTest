@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.model.User;
+import com.example.demo.model.param.QueryUser;
 import com.example.demo.model.param.UserAddParam;
 
 import java.util.List;
@@ -12,4 +13,6 @@ public interface UserService {
     List<User> getList();
 
     User getById(String id);
+
+    List<User> getQueryList(QueryUser queryUser);
 }

@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.User;
+import com.example.demo.model.param.QueryUser;
 import com.example.demo.model.param.UserAddParam;
 import com.example.demo.service.UserService;
 import org.springframework.web.bind.annotation.*;
@@ -45,5 +46,10 @@ public class UserController extends BaseController {
             return "";
         }
         return user.toString();
+    }
+
+    @GetMapping("/query")
+    public String query(QueryUser queryUser){
+        return userService.getQueryList(queryUser).toString();
     }
 }

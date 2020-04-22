@@ -5,6 +5,7 @@ import com.example.demo.model.User;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Map;
 
 @Component
 public class UserDao extends BaseJsonDao<User> {
@@ -36,4 +37,8 @@ public class UserDao extends BaseJsonDao<User> {
         return super.deleteTable();
     }
 
+    @Override
+    public List<User> query(Map<String, Object> queryMap) {
+        return super.query(queryMap);
+    }
 }
